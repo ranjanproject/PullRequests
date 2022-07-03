@@ -2,6 +2,7 @@ package com.example.pullrequests.viewModels
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pullrequests.models.PullRequest
@@ -10,7 +11,7 @@ import com.example.pullrequests.repositories.PullRequestRepository
 import kotlinx.coroutines.launch
 
 class ClosedPullRequestViewModel : ViewModel() {
-    var closedPRListLiveData: LiveData<Any>? = null
+    var closedPRListLiveData = MutableLiveData<Any>()
 
     private val repository = PullRequestRepository()
 
@@ -18,7 +19,6 @@ class ClosedPullRequestViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                val response = repository.getClosedPullRequestList(userName, repoName)
-                Log.d("retrofit", response.body().toString())
                 onGetClosedPRListResponse(response)
             }catch (e: Exception){
                 onGetClosedPRListResponse(e)
@@ -26,11 +26,7 @@ class ClosedPullRequestViewModel : ViewModel() {
         }
     }
 
-    private fun onGetClosedPRListResponse(response: Any){
-        if(true){
-
-        }else{
-
-        }
+    private fun onGetClosedPRListResponse(response: Any?){
+        closedPRListLiveData.value = response
     }
 }

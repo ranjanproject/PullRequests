@@ -51,7 +51,7 @@ class ClosedPullRequestFragment : Fragment() {
     }
 
     private fun initViewModelObservers(){
-        viewModel.closedPRListLiveData?.observe(viewLifecycleOwner, Observer {
+        viewModel.closedPRListLiveData.observe(viewLifecycleOwner, Observer {
             val x = it
         })
     }
