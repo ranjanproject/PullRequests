@@ -5,8 +5,8 @@ import com.example.pullrequests.models.PullRequestsList
 
 class PullRequestData {
 
-    fun getClosedPullRequestList(pullRequestsList: PullRequestsList): MutableList<PullRequest>{
+    fun getClosedPullRequestList(pullRequestsList: PullRequestsList){
 
-        return pullRequestsList.pullRequestsItemList
+
     }
 }
