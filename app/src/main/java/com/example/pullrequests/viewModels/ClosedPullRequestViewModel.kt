@@ -1,4 +1,4 @@
-package com.example.pullrequests.fragments
+package com.example.pullrequests.viewModels
 
 import androidx.lifecycle.ViewModel
 
