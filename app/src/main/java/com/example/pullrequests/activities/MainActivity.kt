@@ -1,7 +1,8 @@
-package com.example.pullrequests
+package com.example.pullrequests.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pullrequests.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
