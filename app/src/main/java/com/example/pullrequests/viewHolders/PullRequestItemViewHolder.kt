@@ -27,6 +27,7 @@ class PullRequestItemViewHolder(private val binding: ItemPullRequestBinding): Re
     }
 
     private fun setUserName(userName: String){
+        binding.userNameTv.text = userName
     }
 
     private fun setUserImage(userImage: String){
@@ -34,14 +35,14 @@ class PullRequestItemViewHolder(private val binding: ItemPullRequestBinding): Re
     }
 
     private fun setTitle(title: String){
-
+       binding.titleTv.text = title
     }
 
     private fun setCreatedDate(createdDate: String){
-
+       binding.createdOnTv.text = createdDate
     }
 
     private fun setClosedDate(closedDate: String){
-
+       binding.closedOnTv.text = closedDate
     }
 }
