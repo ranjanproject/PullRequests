@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userAndProjectFragment">
 
+    <fragment
+        android:id="@+id/userAndProjectFragment"
+        android:name="com.example.pullrequests.fragments.UserAndProjectFragment"
+        android:label="fragment_user_and_project"
+        tools:layout="@layout/fragment_user_and_project" >
+        <action
+            android:id="@+id/action_userAndProjectFragment_to_closedPullRequestFragment"
+            app:destination="@id/closedPullRequestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/closedPullRequestFragment"
+        android:name="com.example.pullrequests.fragments.ClosedPullRequestFragment"
+        android:label="fragment_closed_pull_request"
+        tools:layout="@layout/fragment_closed_pull_request" >
+        <action
+            android:id="@+id/action_closedPullRequestFragment_to_userAndProjectFragment"
+            app:destination="@id/userAndProjectFragment" />
+    </fragment>
 </navigation>
