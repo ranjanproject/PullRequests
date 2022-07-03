@@ -11,13 +11,14 @@
         android:id="@+id/user_name_textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/padding_large"
+        android:hint="@string/user_name"
         android:paddingStart="@dimen/padding_medium"
+        android:paddingTop="@dimen/padding_large"
         android:paddingEnd="@dimen/padding_medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="@string/user_name">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/user_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user_name_et"
@@ -36,6 +37,8 @@
         android:paddingTop="@dimen/padding_medium"
         android:paddingStart="@dimen/padding_medium"
         android:paddingEnd="@dimen/padding_medium"
+        app:startIconDrawable="@drawable/git_repo_icon"
+        app:startIconContentDescription=""
         app:layout_constraintTop_toBottomOf="@id/user_name_textField"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
