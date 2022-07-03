@@ -42,13 +42,25 @@ class UserAndProjectFragment : Fragment() {
     }
 
     private fun initializeRepositoryName(){
-        binding.projectNameEt.setText(R.string.default_repository)
+        binding.repoNameEt.setText(R.string.default_repository)
     }
 
     private fun initializeGetClosedPRButton(){
 
         binding.getClosedPrBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_userAndProjectFragment_to_closedPullRequestFragment)
+
+            findNavController().navigate(
+                R.id.action_userAndProjectFragment_to_closedPullRequestFragment,
+                getBundle())
         }
+    }
+
+    private fun getBundle(): Bundle{
+        val userName = binding.userNameEt.text.toString()
+        val projectName = binding.repoNameEt.text.toString()
+        val bundle = Bundle()
+        bundle.putString(ClosedPullRequestFragment.USER_NAME, userName)
+        bundle.putString(ClosedPullRequestFragment.REPOSITORY_NAME, projectName)
+        return  bundle
     }
 }

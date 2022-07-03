@@ -14,6 +14,8 @@ import com.example.pullrequests.databinding.FragmentUserAndProjectBinding
 class ClosedPullRequestFragment : Fragment() {
 
     companion object {
+        const val USER_NAME = "userName"
+        const val REPOSITORY_NAME = "repoName"
         fun newInstance() = ClosedPullRequestFragment()
     }
 

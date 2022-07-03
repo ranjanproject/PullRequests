@@ -21,6 +21,7 @@
         tools:layout="@layout/fragment_closed_pull_request">
         <action
             android:id="@+id/action_closedPullRequestFragment_to_userAndProjectFragment"
-            app:destination="@id/userAndProjectFragment" />
+            app:destination="@id/userAndProjectFragment"
+            app:popUpTo="@id/userAndProjectFragment" />
     </fragment>
 </navigation>
