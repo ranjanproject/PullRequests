@@ -27,7 +27,6 @@ class ClosedPullRequestFragment : Fragment() {
     ): View? {
         // Retrieve and inflate the layout for this fragment
         binding = FragmentClosedPullRequestBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -40,5 +39,24 @@ class ClosedPullRequestFragment : Fragment() {
 
     }
 
+    private fun initRV(){
+
+    }
+
+    private fun initViewModelObservers(){
+
+    }
+
+    private fun initNetworkState(){
+
+    }
+
+    private fun getUserName(): String{
+        return arguments?.getString(USER_NAME)!!
+    }
+
+    private fun getRepoName(): String{
+        return arguments?.getString(REPOSITORY_NAME)!!
+    }
 
 }
