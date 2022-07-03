@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.pullrequests.R
+import com.example.pullrequests.databinding.FragmentClosedPullRequestBinding
 import com.example.pullrequests.databinding.FragmentUserAndProjectBinding
 
 class ClosedPullRequestFragment : Fragment() {
@@ -16,15 +17,16 @@ class ClosedPullRequestFragment : Fragment() {
         fun newInstance() = ClosedPullRequestFragment()
     }
 
-    private lateinit var binding: FragmentUserAndProjectBinding
 
+    private lateinit var binding: FragmentClosedPullRequestBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Retrieve and inflate the layout for this fragment
-         binding = FragmentUserAndProjectBinding.inflate(inflater,container,  false)
-         return binding.root
+        binding = FragmentClosedPullRequestBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,24 +35,8 @@ class ClosedPullRequestFragment : Fragment() {
     }
 
     private fun init(){
-        initializeUserName()
-        initializeRepositoryName()
-        initializeGetClosedPRButton()
+
     }
 
-    private fun initializeUserName(){
-        binding.userNameEt.setText(R.string.default_user_name)
-    }
-
-    private fun initializeRepositoryName(){
-        binding.projectNameEt.setText(R.string.default_repository)
-    }
-
-    private fun initializeGetClosedPRButton(){
-
-        binding.getClosedPrBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_userAndProjectFragment_to_closedPullRequestFragment)
-        }
-    }
 
 }
