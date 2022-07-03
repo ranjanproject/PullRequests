@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pullrequests.models.PullRequest
 import com.example.pullrequests.viewHolders.PullRequestItemViewHolder
 
-class ClosedPullRequestAdapter(private val context: Context):
+class ClosedPullRequestAdapter(private val context: Context?):
     ListAdapter<Any, RecyclerView.ViewHolder>(ClosedPullRequestDiffUtil()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -37,9 +37,5 @@ class ClosedPullRequestAdapter(private val context: Context):
             is PullRequest -> viewType = PullRequestItemViewHolder.ITEM_PULL_REQUEST
         }
         return viewType
-    }
-
-    override fun getItemCount(): Int {
-        return itemCount
     }
 }
