@@ -17,7 +17,9 @@ import com.example.pullrequests.adapters.ClosedPullRequestAdapter
 import com.example.pullrequests.adapters.ClosedPullRequestItemDecorator
 import com.example.pullrequests.databinding.FragmentClosedPullRequestBinding
 import com.example.pullrequests.databinding.FragmentUserAndProjectBinding
+import com.example.pullrequests.models.PullRequestsList
 import com.example.pullrequests.viewModels.ClosedPullRequestViewModel
+import com.example.pullrequests.models.PullRequest
 
 class ClosedPullRequestFragment : Fragment() {
 
@@ -68,11 +70,36 @@ class ClosedPullRequestFragment : Fragment() {
 
     private fun initViewModelObservers(){
         viewModel.closedPRListLiveData.observe(viewLifecycleOwner, Observer {
-
+                onGetClosedPRListResponse(it)
         })
     }
 
+    private fun onGetClosedPRListResponse(response: Any){
+        if(response is MutableList<*>){
+            hideLoading()
+            submitPRList(response)
+        }else{
+            onNetworkError()
+        }
+    }
+
+    private fun submitPRList(pullRequestsList: MutableList<*>){
+        adapter.submitList(pullRequestsList)
+    }
+
     private fun initNetworkState(){
+
+    }
+
+    private fun onNetworkError(){
+
+    }
+
+    private fun showLoading(){
+
+    }
+
+    private fun hideLoading(){
 
     }
 

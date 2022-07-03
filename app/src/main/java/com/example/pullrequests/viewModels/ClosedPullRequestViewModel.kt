@@ -27,6 +27,6 @@ class ClosedPullRequestViewModel : ViewModel() {
     }
 
     private fun onGetClosedPRListResponse(response: Any?){
-        closedPRListLiveData.value = response
+        closedPRListLiveData.value = response as MutableList<PullRequest>
     }
 }
