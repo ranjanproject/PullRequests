@@ -14,19 +14,11 @@ class ClosedPullRequestFragment : Fragment() {
         fun newInstance() = ClosedPullRequestFragment()
     }
 
-    private lateinit var viewModel: ClosedPullRequestViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_closed_pull_request, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ClosedPullRequestViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

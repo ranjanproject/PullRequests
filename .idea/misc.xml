@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PullRequests/app/src/main/res/layout/activity_main.xml" value="0.27395833333333336" />
+        <entry key="..\:/PullRequests/app/src/main/res/layout/fragment_closed_pull_request.xml" value="0.27395833333333336" />
         <entry key="..\:/PullRequests/app/src/main/res/layout/fragment_pull_requests_list.xml" value="0.2109375" />
         <entry key="..\:/PullRequests/app/src/main/res/layout/fragment_user_project.xml" value="0.20989583333333334" />
         <entry key="..\:/PullRequests/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1505" />
