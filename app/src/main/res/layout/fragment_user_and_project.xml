@@ -46,7 +46,7 @@
         android:hint="@string/repo_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/project_name_et"
+            android:id="@+id/repo_name_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
