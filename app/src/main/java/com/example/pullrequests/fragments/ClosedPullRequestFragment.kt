@@ -10,7 +10,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pullrequests.R
+import com.example.pullrequests.adapters.ClosedPullRequestAdapter
+import com.example.pullrequests.adapters.ClosedPullRequestItemDecorator
 import com.example.pullrequests.databinding.FragmentClosedPullRequestBinding
 import com.example.pullrequests.databinding.FragmentUserAndProjectBinding
 import com.example.pullrequests.viewModels.ClosedPullRequestViewModel
@@ -43,18 +47,28 @@ class ClosedPullRequestFragment : Fragment() {
 
     private fun init(){
         initViewModelObservers()
+        initAdapter()
         initRV()
         initNetworkState()
         getClosedPRList()
     }
 
-    private fun initRV(){
+    private lateinit var adapter: ClosedPullRequestAdapter
+    private fun initAdapter(){
+        adapter = ClosedPullRequestAdapter(context)
+    }
 
+    private fun initRV(){
+        binding.apply {
+            pullRequestRv.adapter = adapter
+            pullRequestRv.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+            pullRequestRv.addItemDecoration(ClosedPullRequestItemDecorator())
+        }
     }
 
     private fun initViewModelObservers(){
         viewModel.closedPRListLiveData.observe(viewLifecycleOwner, Observer {
-            val x = it
+
         })
     }
 
