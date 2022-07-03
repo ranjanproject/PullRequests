@@ -42,8 +42,10 @@ class ClosedPullRequestFragment : Fragment() {
     }
 
     private fun init(){
-         initViewModelObservers()
-         viewModel.getClosedPRList(getUserName(), getRepoName())
+        initViewModelObservers()
+        initRV()
+        initNetworkState()
+        getClosedPRList()
     }
 
     private fun initRV(){
@@ -58,6 +60,10 @@ class ClosedPullRequestFragment : Fragment() {
 
     private fun initNetworkState(){
 
+    }
+
+    private  fun getClosedPRList(){
+        viewModel.getClosedPRList(getUserName(), getRepoName())
     }
 
     private fun getUserName(): String{
