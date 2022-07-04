@@ -8,4 +8,7 @@
     <string name="default_repository">PullRequests</string>
     <string name="details">Details</string>
     <string name="closed_pr">Closed PR</string>
+    <string name="title">Title:</string>
+    <string name="created_on">Created On:</string>
+    <string name="closed_on">Closed On:</string>
 </resources>
