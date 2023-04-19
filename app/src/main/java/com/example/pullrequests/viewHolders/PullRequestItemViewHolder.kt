@@ -42,10 +42,29 @@ class PullRequestItemViewHolder(private val binding: ItemPullRequestBinding): Re
     }
 
     private fun setCreatedDate(createdDate: String){
-       binding.createdOnDateTv.text = createdDate
+       binding.createdOnDateTv.text = getDate(createdDate)
     }
 
     private fun setClosedDate(closedDate: String){
-       binding.closedOnDateTv.text = closedDate
+       binding.closedOnDateTv.text = getDate(closedDate)
+    }
+
+    private fun setCreatedTime(createdDate: String){
+        binding.createdOnTimeTv.text = getTime(createdDate)
+    }
+
+    private fun setClosedTime(closedDate: String){
+        binding.closedOnTimeTv.text = getTime(closedDate)
+    }
+
+    private fun getTime(date: String): String{
+        var time  = ""
+
+        return time
+    }
+
+    private fun getDate(date: String): String{
+        var calculatedDate = ""
+        return calculatedDate
     }
 }
